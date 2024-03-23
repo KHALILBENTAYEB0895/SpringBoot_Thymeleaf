@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>User Registration</title>
+    </head>
+    <body>
+        <div align="center">
+            <h1>Formulaire d'inscription</h1>
+            <div style="border-style:solid; text-align:center; width:500px">
+                <form th:action="@{register/save}" method="post" th:object="${userForm}">
+                    <div>
+                        <label>Full name:</label>
+                        <input type="text" th:field = "*{name}" />
+                        <br/>
+                    </div>
+                    <div>
+                        <label>Email:</label>
+                        <input type="email" th:field = "*{email}">
+                        <br/>
+                    </div>
+                    <div>
+                        <label>Password:</label>
+                        <input type="password" th:field="*{password}"/>
+                        <br/>
+                    </div>
+                    <div>
+                        <label>Gender:</label>
+                        <input type="radio" th:field = "*{gender}" value="male"/>
+                        <label>Male</label>
+                        <input type="radio" th:field = "*{gender}" value="femme"/>
+                        <label>Female</label>
+                        <br/>
+                    </div>
+                    <div>
+                        <label >Profession:</label>
+                        <select th:field = "*{profession}">
+                            <option th:each = "p : ${listProfession}" th:value="${p}" th:text="${p}"></option>
+
+                        </select>
+                    </div>
+                    <div>
+                        <label>Adresse:</label>
+                        <textarea th:field = "*{address}" rows="4" cols="50"></textarea>
+                    </div>
+                    <button type="submit">register</button>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div align="center">
+    <h1>Registered User Information</h1>
+    <div>Name:<strong th:text = "${userForm.name}"></strong></div>
+    <div>Email:<strong th:text = "${userForm.email}"></strong></div>
+    <div>Password:<strong th:text = "${userForm.password}"></strong></div>
+    <div>Gender:<strong th:text = "${userForm.gender}"></strong></div>
+    <div>Address:<strong th:text = "${userForm.address}"></strong></div>
+    <div>Profession:<strong th:text = "${userForm.profession}"></strong></div>
+</div>
+</body>
+</html>
